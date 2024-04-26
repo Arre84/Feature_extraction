@@ -59,7 +59,7 @@ def extract_corners_and_descriptors(image:NDArray)-> tuple[list[cv.KeyPoint], ND
     threshold = 0.01 * harris_corners1.max()
     thresholded_img1 = np.zeros_like(image)
     thresholded_img1[harris_corners1 > threshold] = 255
-
+#Extract keypoints
     keypoints1 = np.argwhere(thresholded_img1 == 255).tolist()
 
 # Convert keypoints to list of KeyPoint objects
